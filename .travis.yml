@@ -2,7 +2,7 @@ language: c
 
 env:
   global:
-    - IMAGE_NAME=busybox-tomcat
+    - IMAGE_NAME=tomcat
     # HUB_USERNAME, HUB_PASSWORD and HUB_EMAIL should be configured from the Travis repository settings
     - "HOST_IP=$(/sbin/ifconfig venet0:0 | grep 'inet addr' | awk -F: '{print $2}' | awk '{print $1}')"
     - DOCKER_HOST=tcp://$HOST_IP:2375
