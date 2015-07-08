@@ -1,4 +1,4 @@
-## Minimal Docker image with Apache Tomcat [![Build Status](https://travis-ci.org/jeanblanchard/docker-tomcat.svg?branch=tomcat8java7)](https://travis-ci.org/jeanblanchard/docker-tomcat)
+## Minimal Docker image with Apache Tomcat [![Build Status](https://travis-ci.org/jeanblanchard/docker-tomcat.svg?branch=master)](https://travis-ci.org/jeanblanchard/docker-tomcat)
 
 Basic [Docker](https://www.docker.com/) image to run [Apache Tomcat](http://tomcat.apache.org/).
 This is based on [Alpine Linux](http://alpinelinux.org/) to keep the size minimal.
