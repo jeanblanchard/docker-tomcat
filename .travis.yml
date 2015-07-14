@@ -10,9 +10,10 @@ env:
     - SLIRP_PORTS=$(seq 2375 2500)
   matrix:
     - DOCKERFILE_DIR=tomcat8-java8 IMAGE_TAGS="tomcat8-java8 8.0.24-java8 8.0.24 8 latest"
-    - DOCKERFILE_DIR=tomcat8-java7 IMAGE_TAGS="tomcat8-java7 8.0.24-java7"
-    - DOCKERFILE_DIR=tomcat7-java8 IMAGE_TAGS="tomcat7-java8 7.0.63-java8"
-    - DOCKERFILE_DIR=tomcat7-java7 IMAGE_TAGS="tomcat7-java7 7.0.63-java7 7.0.63 7"
+    - DOCKERFILE_DIR=tomcat7-java8 IMAGE_TAGS="tomcat7-java8 7.0.63-java8 7.0.63 7"
+    - DOCKERFILE_DIR=tomcat6-java8 IMAGE_TAGS="tomcat6-java8 6.0.44-java8 6.0.44 6"
+    #- DOCKERFILE_DIR=tomcat8-java7 IMAGE_TAGS="tomcat8-java7 8.0.24-java7"
+    #- DOCKERFILE_DIR=tomcat7-java7 IMAGE_TAGS="tomcat7-java7 7.0.63-java7"
 
 before_install:
   - sudo sh -c "wget -qO- https://get.docker.com/gpg | apt-key add -"
