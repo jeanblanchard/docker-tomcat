@@ -1,7 +1,7 @@
 machine:
   environment:
     IMAGE_NAME: tomcat
-    IMAGE_TAGS: "tomcat8-java8 8.0.27-java8 8.0.27 8 latest"
+    IMAGE_TAGS: "tomcat6-java8 6.0.44-java8 6.0.44 6"
     IMAGE_OWNER: jeanblanchard
     # HUB_USERNAME, HUB_PASSWORD and HUB_EMAIL should be configured from the CircleCI project settings
   services:
@@ -23,6 +23,6 @@ test:
 
 deployment:
   hub:
-    branch: master
+    branch: tomcat6
     commands:
       - build/publish.sh --image-name=${IMAGE_NAME} --image-owner=${IMAGE_OWNER} --image-tags="${IMAGE_TAGS}"
