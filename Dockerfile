@@ -1,4 +1,4 @@
-FROM jeanblanchard/java:7
+FROM jeanblanchard/java:8
 MAINTAINER Jean Blanchard <jean@blanchard.io>
 
 # Expose web port
@@ -6,7 +6,7 @@ EXPOSE 8080
 
 # Tomcat Version
 ENV TOMCAT_VERSION_MAJOR 8
-ENV TOMCAT_VERSION_FULL  8.0.26
+ENV TOMCAT_VERSION_FULL  8.0.27
 
 # Download and install
 RUN apk add --update curl &&\
