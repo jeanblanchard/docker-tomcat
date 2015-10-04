@@ -32,5 +32,5 @@ docker run -d -p 2500:8080 --name "${IMAGE_NAME}_test" ${IMAGE_NAME}
 while ! curl -sS localhost:2500 > /dev/null ; do
   sleep 1
 done
-docker kill "${IMAGE_NAME}_test"
-docker rm "${IMAGE_NAME}_test"
+docker kill "${IMAGE_NAME}_test" || true
+docker rm "${IMAGE_NAME}_test" || true
