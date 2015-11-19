@@ -15,6 +15,7 @@ You should remove it, or at least change its password, if you want to use this i
 * `tomcat8-java8` or `8` or `latest`: Tomcat 8 on Oracle Java 8
 * `tomcat7-java8` or `7`: Tomcat 7 on Oracle Java 8
 * `tomcat6-java8` or `6`: Tomcat 6 on Oracle Java 8
+* `tomcat9-java8` or `6`: Tomcat 9 preview on Oracle Java 8
 
 Please note that Java 7 is unsupported by Oracle, as of April 2015, so the following tags
 use Java version 7u80, which has know security issues, and should not be used on a publicly accessible website:
@@ -31,4 +32,4 @@ due to the end of support for java 7.
 
 Example: 
 
-    docker run -d -p 8080:8080 jeanblanchard/tomcat:8
+    docker run -d -p 8080:8080 jeanblanchard/tomcat:9

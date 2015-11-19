@@ -5,8 +5,8 @@ MAINTAINER Jean Blanchard <jean@blanchard.io>
 EXPOSE 8080
 
 # Tomcat Version
-ENV TOMCAT_VERSION_MAJOR 8
-ENV TOMCAT_VERSION_FULL  8.0.28
+ENV TOMCAT_VERSION_MAJOR 9
+ENV TOMCAT_VERSION_FULL  9.0.0.M1
 
 # Download and install
 RUN apk add --update curl &&\
