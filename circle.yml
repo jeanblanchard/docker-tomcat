@@ -23,6 +23,6 @@ test:
 
 deployment:
   hub:
-    branch: master
+    branch: tomcat9
     commands:
       - build/publish.sh --image-name=${IMAGE_NAME} --image-owner=${IMAGE_OWNER} --image-tags="${IMAGE_TAGS}"
