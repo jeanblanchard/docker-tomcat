@@ -31,4 +31,4 @@ due to the end of support for java 7.
 
 Example: 
 
-    docker run -d -p 8080:8080 jeanblanchard/tomcat:8
+    docker run -d -p 8080:8080 jeanblanchard/tomcat:7
