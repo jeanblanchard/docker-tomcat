@@ -1,7 +1,7 @@
 machine:
   environment:
     IMAGE_NAME: tomcat
-    IMAGE_TAGS: "tomcat8-java8 8.0.32-java8 8.0.32 8 latest"
+    IMAGE_TAGS: "tomcat8-java8 8.0.33-java8 8.0.33 8 latest"
     IMAGE_OWNER: jeanblanchard
     # HUB_USERNAME, HUB_PASSWORD and HUB_EMAIL should be configured from the CircleCI project settings
   services:
