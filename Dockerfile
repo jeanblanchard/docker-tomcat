@@ -6,7 +6,7 @@ EXPOSE 8080
 
 # Tomcat Version
 ENV TOMCAT_VERSION_MAJOR 6
-ENV TOMCAT_VERSION_FULL  6.0.47
+ENV TOMCAT_VERSION_FULL  6.0.48
 
 # Download and install
 RUN apk add --update curl &&\
