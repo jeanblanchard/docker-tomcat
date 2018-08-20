@@ -28,9 +28,7 @@ echo "###"
 echo "### Testing the image"
 echo "###"
 
-docker run -d -p 2500:8080 --name "${IMAGE_NAME}_test" ${IMAGE_NAME}
-while ! curl -sS localhost:2500 > /dev/null ; do
-  sleep 1
-done
+docker run -d --name "${IMAGE_NAME}_test" ${IMAGE_NAME}
+docker run --rm --network "container:${IMAGE_NAME}_test" appropriate/curl --retry 10 --retry-connrefused http://127.0.0.1:8080
 docker kill "${IMAGE_NAME}_test" || true
 docker rm "${IMAGE_NAME}_test" || true

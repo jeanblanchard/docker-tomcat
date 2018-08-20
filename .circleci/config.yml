@@ -1,0 +1,58 @@
+jobConfig: &jobConfig
+  parallelism: 1
+  environment:
+    IMAGE_NAME: tomcat
+    IMAGE_TAGS: "tomcat8-java8 tomcat8.5-java8 8.5.33-java8 8.5.33 8.5 8 latest"
+    IMAGE_OWNER: jeanblanchard
+    # HUB_USERNAME and HUB_PASSWORD should be configured from the CircleCI project settings
+  docker:
+  - image: circleci/buildpack-deps:stretch
+
+version: 2
+jobs:
+  build_and_test:
+    <<: *jobConfig
+    steps:
+      - checkout
+      - run: git submodule sync
+      - run: git submodule update --init
+
+      - setup_remote_docker
+
+      - run: docker info
+
+      # Build
+      - run: build/build.sh --image-name=${IMAGE_NAME} --image-owner=${IMAGE_OWNER} --image-tags="${IMAGE_TAGS}"
+
+      # Test
+      - run: ./test.sh --image-name=${IMAGE_NAME}
+
+      # Persist to workspace
+      - run: docker save ${IMAGE_NAME} > image.tar
+
+      - persist_to_workspace:
+          root: .
+          paths:
+            - build/*.sh
+            - image.tar
+
+  deploy:
+    <<: *jobConfig
+    steps:
+      - attach_workspace:
+          at: .
+      - setup_remote_docker
+      - run: docker load < image.tar
+      - run: build/publish.sh --image-name=${IMAGE_NAME} --image-owner=${IMAGE_OWNER} --image-tags="${IMAGE_TAGS}"
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build_and_test
+      - deploy:
+          requires:
+            - build_and_test
+          filters:
+            branches:
+              only: master
