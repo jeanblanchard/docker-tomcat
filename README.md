@@ -12,9 +12,11 @@ You should remove it, or at least change its password, if you want to use this i
 
 ### Tags
 
-* `tomcat8-java8` or `8` or `latest`: Tomcat 8 on Oracle Java 8
+* `tomcat9-java8` or `9` or `latest`: Tomcat 9 on Oracle Java 8
+* `tomcat8-java8` or `8` or `8.5` or `latest`: Tomcat 8.5 on Oracle Java 8
 * `tomcat7-java8` or `7`: Tomcat 7 on Oracle Java 8
-* `tomcat6-java8` or `6`: Tomcat 6 on Oracle Java 8
+
+Tomcat 6 and 8.0 are no longer supported, so the corresponding tags should no longer be used. 
 
 Please note that Java 7 is unsupported by Oracle, as of April 2015, so the following tags
 use Java version 7u80, which has know security issues, and should not be used on a publicly accessible website:
