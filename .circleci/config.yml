@@ -2,7 +2,7 @@ jobConfig: &jobConfig
   parallelism: 1
   environment:
     IMAGE_NAME: tomcat
-    IMAGE_TAGS: "tomcat9-java8 9.0.13-java8 9.0.13 9 latest"
+    IMAGE_TAGS: "tomcat9-java8 9.0.14-java8 9.0.14 9 latest"
     IMAGE_OWNER: jeanblanchard
     # HUB_USERNAME and HUB_PASSWORD should be configured from the CircleCI project settings
   docker:
